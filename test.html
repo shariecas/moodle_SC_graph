@@ -13,7 +13,9 @@
     <div id="jxgbox" class="jxgbox" style="width:500px; height:500px; border: 1px solid #ccc;"></div>
 
     <script>
-       
+       function sinc(x) {
+    	return x === 0 ? 1 : Math.sin(x) / x;
+		}
             
             // Initialize the board
             const board = JXG.JSXGraph.initBoard('jxgbox', {
@@ -30,7 +32,7 @@
 
         // Plot a sine wave function
         const graph = board.create('functiongraph', [function(x) { 
-            return Math.sin(x); 
+            return Math.sinc(x); 
         }], {strokeColor: 'purple'});
 
     </script>
