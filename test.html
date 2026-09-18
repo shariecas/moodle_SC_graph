@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta charset="UTF-8">
+    <title>My First JSXGraph</title>
+    <!-- Include JSXGraph CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css" />
+    <!-- Include JSXGraph JavaScript Core -->
+    <script type="text/javascript" charset="UTF-8" src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+</head>
+<body>
+
+    <!-- Create a placeholder div where the board will appear -->
+    <div id="jxgbox" class="jxgbox" style="width:500px; height:500px; border: 1px solid #ccc;"></div>
+
+    <script>
+        // This wrapper prevents "not defined" errors by waiting until the script above is fully ready
+        window.onload = function() {
+            
+            // Initialize the board
+            const board = JXG.JSXGraph.initBoard('jxgbox', {
+                boundingbox: [-5, 5, 5, -5], 
+                axis: true                  
+            });
+
+        // Create two interactive points
+        const p1 = board.create('point', [-2, 1], {name: 'A', color: 'blue'});
+        const p2 = board.create('point', [2, 3], {name: 'B', color: 'red'});
+
+        // Draw a line connecting the points
+        const line = board.create('line', [p1, p2], {strokeColor: 'green', strokeWidth: 2});
+
+        // Plot a sine wave function
+        const graph = board.create('functiongraph', [function(x) { 
+            return Math.sin(x); 
+        }], {strokeColor: 'purple'});
+	};
+    </script>
+
+</body>
+</html>
