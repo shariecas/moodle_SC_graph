@@ -14,8 +14,7 @@
     <div id="jxgbox" class="jxgbox" style="width:500px; height:500px; border: 1px solid #ccc;"></div>
 
     <script>
-        // This wrapper prevents "not defined" errors by waiting until the script above is fully ready
-        window.onload = function() {
+       
             
             // Initialize the board
             const board = JXG.JSXGraph.initBoard('jxgbox', {
@@ -34,7 +33,7 @@
         const graph = board.create('functiongraph', [function(x) { 
             return Math.sin(x); 
         }], {strokeColor: 'purple'});
-	};
+
     </script>
 
 </body>
